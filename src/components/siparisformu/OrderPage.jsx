@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "./../../../images/iteration-1-images/logo.svg";
 import PizzaInfo from "./PizzaInfo";
 import PizzaSize from "./PizzaSize";
 import DoughType from "./DoughType";
+import Extras from "./Extras";
+import NameInput from "./NameInput";
+import Note from "./Note";
+import OrderSummary from "./OrderSummary";
 
 const ContainerHeader = styled.header`
   background-color: #ce2829;
@@ -49,7 +54,16 @@ const MainContent = styled.main`
 `;
 
 export default function OrderPage() {
-  console.log("OrderPage buradayım!");
+  const [name, setName] = useState("");
+  const [size, setSize] = useState("");
+  const [dough, setDough] = useState("");
+  const [selectedToppings, setSelectedToppings] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  const [note, setNote] = useState("");
+
+  const basePrice = 85.5;
+  const extraPrice = selectedToppings.length * 5;
+  const total = (basePrice + extraPrice) * quantity;
   return (
     <>
       <ContainerHeader>
@@ -64,16 +78,28 @@ export default function OrderPage() {
       </ContainerHeader>
       <MainContent>
         <PizzaInfo />
-        <section style={{ display: "flex", justifyContent: "flex-start", gap: "167.88px" }}>
-          <PizzaSize />
-          <DoughType />
+        <section
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            gap: "167.88px",
+          }}
+        >
+          <PizzaSize size={size} setSize={setSize} />
+          <DoughType dough={dough} setDough={setDough} />
         </section>
-        {/* Malzemeler */}
-        <section>
-          <h4>Ek Malzemeler</h4>
-          <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
-          {/* Checkbox Grid */}
-        </section>
+        <Extras
+          selectedToppings={selectedToppings}
+          setSelectedToppings={setSelectedToppings}
+        />
+        <NameInput name={name} setName={setName} />
+        <Note note={note} setNote={setNote} />
+        <OrderSummary
+          quantity={quantity}
+          setQuantity={setQuantity}
+          extraPrice={extraPrice}
+          total={total}
+        />
       </MainContent>
     </>
   );

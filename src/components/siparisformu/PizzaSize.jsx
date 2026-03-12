@@ -39,8 +39,8 @@ const Label = styled.label`
   font-family: "Barlow", sans-serif;
 `;
 
-export default function PizzaSize() {
-  const [size, setSize] = useState("");
+export default function PizzaSize(props) {
+  const {size, setSize} = props;
 
   const handleChange = (e) => {
     setSize(e.target.value);

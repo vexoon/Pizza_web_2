@@ -32,8 +32,8 @@ const StyledSelect = styled.select`
   font-size: 16px;
 `;
 
-export default function DoughType() {
-  const [dough, setDough] = useState("");
+export default function DoughType(props) {
+  const { dough, setDough } = props;
 
   const handleChange = (e) => {
     setDough(e.target.value);
