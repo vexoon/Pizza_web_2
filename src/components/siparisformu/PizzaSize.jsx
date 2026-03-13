@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -8,7 +7,7 @@ const Container = styled.div`
   max-width: 532px;
 `;
 
-const ContainerForm = styled.form`
+const ContainerForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -40,11 +39,8 @@ const Label = styled.label`
 `;
 
 export default function PizzaSize(props) {
-  const {size, setSize} = props;
+  const { size, handleChange } = props;
 
-  const handleChange = (e) => {
-    setSize(e.target.value);
-  };
   return (
     <Container>
       <Title>Boyut Seç</Title>
@@ -53,7 +49,7 @@ export default function PizzaSize(props) {
           <input
             type="radio"
             id="S"
-            name="pizza-size"
+            name="size"
             value="small"
             checked={size === "small"}
             onChange={handleChange}
@@ -65,7 +61,7 @@ export default function PizzaSize(props) {
           <input
             type="radio"
             id="M"
-            name="pizza-size"
+            name="size"
             value="medium"
             checked={size === "medium"}
             onChange={handleChange}
@@ -77,7 +73,7 @@ export default function PizzaSize(props) {
           <input
             type="radio"
             id="L"
-            name="pizza-size"
+            name="size"
             value="large"
             checked={size === "large"}
             onChange={handleChange}

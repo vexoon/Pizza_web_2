@@ -51,21 +51,12 @@ const initalValue = [
 
 export default function Extras(props) {
   const [toppings, setToppings] = useState(initalValue);
-  const { selectedToppings, setSelectedToppings } = props;
+  const { selectedToppings, handleChange } = props;
 
-  const handleChange = (e) => {
-    const { value } = e.target;
-
-    if (selectedToppings.includes(value)) {
-      setSelectedToppings(selectedToppings.filter((item) => item !== value));
-    } else if (selectedToppings.length < 10) {
-      setSelectedToppings([...selectedToppings, value]);
-    }
-  };
   return (
     <>
       <ContainerHeader>
-        <Title>Ek Malzemler</Title>
+        <Title>Ek Malzemeler</Title>
         <Text>En fazla 10 malzeme seçebilirsiniz. 5₺</Text>
       </ContainerHeader>
 

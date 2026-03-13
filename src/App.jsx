@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import OrderPage from "./components/siparisformu/OrderPage";
 import Home from "./components/Home";
@@ -11,11 +11,18 @@ function App() {
   return (
     <Router>
       <Switch>
-        
-        <Route path="/order"><OrderPage /></Route>
-        
+        <Route exact path="/">
+          <Home />
+        </Route>
+
+        <Route path="/order">
+          <OrderPage />
+        </Route>
+
+        <Route path="/success">
+          <Success />
+        </Route>
       </Switch>
-      
     </Router>
   );
 }

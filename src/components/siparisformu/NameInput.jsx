@@ -33,11 +33,8 @@ const StyledInput = styled.input`
 `;
 
 export default function NameInput(props) {
-  const { name, setName } = props;
+  const { name, handleChange } = props;
 
-  const handleChange = (e) => {
-    setName(e.target.value);
-  };
   return (
     <ContainerForm>
       <Label htmlFor="name">Adınız:</Label>

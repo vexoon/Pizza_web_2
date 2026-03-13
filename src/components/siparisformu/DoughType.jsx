@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -33,21 +32,18 @@ const StyledSelect = styled.select`
 `;
 
 export default function DoughType(props) {
-  const { dough, setDough } = props;
+  const { dough, handleChange } = props;
 
-  const handleChange = (e) => {
-    setDough(e.target.value);
-  };
   return (
     <Container>
       <Title>Hamur Seç</Title>
-      <StyledSelect value={dough} onChange={handleChange} required>
+      <StyledSelect name="dough" value={dough} onChange={handleChange} required>
         <option value="" disabled>
           Hamur Kalınlığı
         </option>
         <option value="ince">İnce</option>
         <option value="normal">Normal</option>
-        <option value="Kalin">Kalın</option>
+        <option value="kalin">Kalın</option>
       </StyledSelect>
     </Container>
   );

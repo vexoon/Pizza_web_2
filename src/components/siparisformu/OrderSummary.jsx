@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -88,23 +87,39 @@ const SubmitButton = styled(Button)`
   height: 62px;
   border-radius: 5px !important;
   margin-top: -1px;
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #777;
+  }
 `;
 
 export default function OrderSummary(props) {
-  const { quantity, setQuantity, extraPrice, total } = props;
+  const { quantity, handleChange, extraPrice, total, isValid, handleSubmit } = props;
 
-  function increase() {
-    setQuantity(quantity + 1);
-  }
-  function decrease() {
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
-  }
+  const increase = () => {
+    handleChange({
+      target: { name: "quantity", value: quantity + 1 },
+    });
+  };
+  const decrease = () => {
+    if (quantity > 1) {
+      handleChange({
+        target: { name: "quantity", value: quantity - 1 },
+      });
+    }
+  };
   return (
     <Container>
       <ButtonContainer>
-        <Button onClick={decrease}>-</Button>
+        <Button type="button" onClick={decrease}>
+          -
+        </Button>
         <Text>{quantity}</Text>
-        <Button onClick={increase}>+</Button>
+        <Button type="button" onClick={increase}>
+          +
+        </Button>
       </ButtonContainer>
       <div>
         <SummaryCard>
@@ -118,7 +133,7 @@ export default function OrderSummary(props) {
             <Total>{total}</Total>
           </Selections>
         </SummaryCard>
-        <SubmitButton>Sipariş Ver</SubmitButton>
+        <SubmitButton type="submit" onClick={handleSubmit} disabled={!isValid}>Sipariş Ver</SubmitButton>
       </div>
     </Container>
   );

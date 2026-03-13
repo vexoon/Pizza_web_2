@@ -25,7 +25,7 @@ export default function CheckBox(props) {
       <ToppingInput
         type="checkbox"
         id={topping}
-        name="extras"
+        name="toppings"
         value={topping}
         onChange={handleChange}
         checked={checked}

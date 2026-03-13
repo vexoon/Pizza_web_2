@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 const ContainerForm = styled.form`
   display: flex;
@@ -40,11 +39,8 @@ const Divider = styled.hr`
 `;
 
 export default function Note(props) {
-  const { note, setNote } = props;
+  const { note, handleChange } = props;
 
-  const handleChange = (e) => {
-    setNote(e.target.value);
-  };
   return (
     <ContainerForm>
       <Label htmlFor="note">Sipariş Notu</Label>
