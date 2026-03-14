@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import OrderPage from "./components/siparisformu/OrderPage";
-import Home from "./components/Home";
+import Home from "./components/homepage/Home";
 import Success from "./components/Success";
 
 function App() {

@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import logo from "./../../images/iteration-1-images/logo.svg";
-import banner from "./../../images/iteration-1-images/home-banner.png";
+import logo from "./../../../images/iteration-1-images/logo.svg";
+import banner from "./../../../images/iteration-1-images/home-banner.png";
+import CategoryBar from "./CategoryBar";
+import PromoCard from "./PromoCard";
+import ProductCard from "./ProductCard";
+import Footer from "./Footer";
 
 const HomeContainer = styled.div`
   background-image: url(${banner});
@@ -29,6 +33,17 @@ const MainHeading = styled.h1`
   line-height: 92px;
   line-spacing: 1.5;
   text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 26px;
+`;
+
+const Slogan = styled.p`
+  font-family: "Satisfy", cursive;
+  color: #fdc913;
+  font-size: 32px;
+  margin-top: 53px;
+  font-weight: 400;
+  margin-bottom: 0;
 `;
 
 const ActionButton = styled.button`
@@ -55,20 +70,27 @@ export default function Home() {
   const history = useHistory();
 
   return (
-    <HomeContainer>
-      <img
-        src={logo}
-        alt="Teknolojik Yemekler Logo"
-        style={{ marginTop: "106.99px" }}
-      />
-      <Content>
-        <MainHeading>
-          KOD ACIKTIRIR <br /> PİZZA, DOYURUR
-        </MainHeading>
-        <ActionButton onClick={() => history.push("/order")}>
-          ACIKTIM
-        </ActionButton>
-      </Content>
-    </HomeContainer>
+    <>
+      <HomeContainer>
+        <img
+          src={logo}
+          alt="Teknolojik Yemekler Logo"
+          style={{ marginTop: "56px" }}
+        />
+        <Content>
+          <Slogan>fırsatı kaçırma</Slogan>
+          <MainHeading>
+            KOD ACIKTIRIR <br /> PİZZA, DOYURUR
+          </MainHeading>
+          <ActionButton onClick={() => history.push("/order")}>
+            ACIKTIM
+          </ActionButton>
+        </Content>
+      </HomeContainer>
+      <CategoryBar />
+      <PromoCard />
+      <ProductCard />
+      <Footer />
+    </>
   );
 }
