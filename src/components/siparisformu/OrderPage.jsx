@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import logo from "./../../../images/iteration-1-images/logo.svg";
+import logo from "./../../assets/logo.svg";
 import PizzaInfo from "./PizzaInfo";
 import PizzaSize from "./PizzaSize";
 import DoughType from "./DoughType";
@@ -126,14 +125,14 @@ export default function OrderPage() {
       total: (85.5 + extraPrice) * formData.quantity,
     };
 
-    localStorage.setItem("pizzaSiparisi", JSON.stringify(orderToSave));
-
     axios
       .post("https://jsonplaceholder.typicode.com/posts", formData)
       .then((response) => {
         console.log("Sipariş Başarıyla Gönderildi!");
         console.log("API Yanıtı (Sipariş Özeti):", response.data);
+        localStorage.setItem("pizzaSiparisi", JSON.stringify(orderToSave));
         history.push("/success");
+
         setFormData(initialFormData);
       })
       .catch((error) => {
@@ -186,7 +185,6 @@ export default function OrderPage() {
           isValid={isValid}
         />
       </MainContent>
-      <Footer />
     </>
   );
 }

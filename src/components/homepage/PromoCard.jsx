@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import card1 from './../../assets/cta/kart-1.png';
+import card2 from './../../assets/cta/kart-2.png';
+import card3 from './../../assets/cta/kart-3.png';
+
 const PromoCardWrapper = styled.div`
   width: 100%;
   padding-top: 68px;
@@ -19,7 +23,7 @@ const ContentContainer = styled.div`
 `;
 
 const PizzaCard = styled.div`
-  background-image: url("./../images/iteration-2-images/cta/kart-1.png");
+  background-image: url(${card1});
   background-size: cover;
   background-position: center;
   width: 531px;
@@ -109,7 +113,7 @@ export default function PromoCard() {
           </PromoCardButton>
         </PizzaCard>
         <PromoCardRightWrapper>
-          <PromoCardRight bgimg="./../images/iteration-2-images/cta/kart-2.png">
+          <PromoCardRight bgimg={card2}>
             <PromoCardRightTitle>
               Hackathlon
               <br />
@@ -119,7 +123,7 @@ export default function PromoCard() {
               SİPARİŞ VER
             </PromoCardButton>
           </PromoCardRight>
-          <PromoCardRight bgimg="./../images/iteration-2-images/cta/kart-3.png">
+          <PromoCardRight bgimg={card3}>
             <PromoCardRightTitle style={{ color: "black" }}>
               <span style={{ color: "red" }}>Çoooook</span> hızlı
               <br />

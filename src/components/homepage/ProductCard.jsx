@@ -1,10 +1,14 @@
 import styled from "styled-components";
-import ramen from "./../../../images/iteration-2-images/icons/1.svg";
-import pizza from "./../../../images/iteration-2-images/icons/2.svg";
-import burger from "./../../../images/iteration-2-images/icons/3.svg";
-import fries from "./../../../images/iteration-2-images/icons/4.svg";
-import fastfood from "./../../../images/iteration-2-images/icons/5.svg";
-import drinks from "./../../../images/iteration-2-images/icons/6.svg";
+import ramen from "./../../assets/icons/1.svg";
+import pizza from "./../../assets/icons/2.svg";
+import burger from "./../../assets/icons/3.svg";
+import fries from "./../../assets/icons/4.svg";
+import fastfood from "./../../assets/icons/5.svg";
+import drinks from "./../../assets/icons/6.svg";
+import food1 from './../../assets/pictures/food-1.png'
+import food2 from './../../assets/pictures/food-2.png'
+import food3 from './../../assets/pictures/food-3.png'
+
 
 const MenuContainer = styled.section`
   background-color: #faf7f2;
@@ -122,7 +126,7 @@ const products = [
     rating: 4.9,
     reviews: 200,
     price: "60₺",
-    img: "./../../../images/iteration-2-images/pictures/food-1.png",
+    img: food1,
   },
   {
     id: 2,
@@ -130,7 +134,7 @@ const products = [
     rating: 4.9,
     reviews: 928,
     price: "85₺",
-    img: "./../../../images/iteration-2-images/pictures/food-2.png",
+    img: food2,
   },
   {
     id: 3,
@@ -138,7 +142,7 @@ const products = [
     rating: 4.9,
     reviews: 462,
     price: "75₺",
-    img: "./../../../images/iteration-2-images/pictures/food-3.png",
+    img: food3,
   },
 ];
 

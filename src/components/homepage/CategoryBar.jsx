@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import icon1 from './../images/iteration-2-images/icons/1.svg';
-import icon2 from './../images/iteration-2-images/icons/2.svg';
-import icon3 from './../images/iteration-2-images/icons/3.svg';
-import icon4 from './../images/iteration-2-images/icons/4.svg';
-import icon5 from './../images/iteration-2-images/icons/5.svg';
-import icon6 from './../images/iteration-2-images/icons/6.svg';
+import icon1 from './../../assets/icons/1.svg';
+import icon2 from './../../assets/icons/2.svg';
+import icon3 from './../../assets/icons/3.svg';
+import icon4 from './../../assets/icons/4.svg';
+import icon5 from './../../assets/icons/5.svg';
+import icon6 from './../../assets/icons/6.svg';
 
 const NavContainer = styled.nav`
   display: flex;

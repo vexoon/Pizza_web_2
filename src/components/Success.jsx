@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from "./../../images/iteration-1-images/logo.svg";
+import logo from "./../assets/logo.svg";
 
 const SuccessContainer = styled.div`
   background-color: #ce2829;

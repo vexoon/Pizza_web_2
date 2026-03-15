@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import logo from "./../../../images/iteration-1-images/logo.svg";
-import banner from "./../../../images/iteration-1-images/home-banner.png";
+import logo from "./../../assets/logo.svg";
+import banner from "./../../assets/home-banner.png";
 import CategoryBar from "./CategoryBar";
 import PromoCard from "./PromoCard";
 import ProductCard from "./ProductCard";
@@ -90,7 +90,6 @@ export default function Home() {
       <CategoryBar />
       <PromoCard />
       <ProductCard />
-      <Footer />
     </>
   );
 }

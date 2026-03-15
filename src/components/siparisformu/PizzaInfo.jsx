@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import banner from "./../../../images/iteration-2-images/pictures/form-banner.png";
+import banner from "./../../assets/pictures/form-banner.png";
 
 const Container = styled.div`
   background-color: #faf7f2;
