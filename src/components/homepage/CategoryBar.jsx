@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import icon1 from './../images/iteration-2-images/icons/1.svg';
+import icon2 from './../images/iteration-2-images/icons/2.svg';
+import icon3 from './../images/iteration-2-images/icons/3.svg';
+import icon4 from './../images/iteration-2-images/icons/4.svg';
+import icon5 from './../images/iteration-2-images/icons/5.svg';
+import icon6 from './../images/iteration-2-images/icons/6.svg';
 
 const NavContainer = styled.nav`
   display: flex;
@@ -31,24 +37,24 @@ const categories = [
   {
     id: 1,
     name: "YENİ! Kore",
-    img: "./../images/iteration-2-images/icons/1.svg",
+    img: icon1,
   },
-  { id: 2, name: "Pizza", img: "./../images/iteration-2-images/icons/2.svg" },
-  { id: 3, name: "Burger", img: "./../images/iteration-2-images/icons/3.svg" },
+  { id: 2, name: "Pizza", img: icon2 },
+  { id: 3, name: "Burger", img: icon3 },
   {
     id: 4,
     name: "Kızartmalar",
-    img: "./../images/iteration-2-images/icons/4.svg",
+    img: icon4,
   },
   {
     id: 5,
     name: "Fast food",
-    img: "./../images/iteration-2-images/icons/5.svg",
+    img: icon5,
   },
   {
     id: 6,
     name: "Gazlı içecek",
-    img: "./../images/iteration-2-images/icons/6.svg",
+    img: icon6,
   },
 ];
 

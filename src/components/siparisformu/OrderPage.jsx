@@ -24,27 +24,7 @@ const Image = styled.img`
   margin: 54.41px 0 33.59px 0;
   width: 363px;
 `;
-const Nav = styled.nav`
-  margin-top: 44.72px;
-  display: flex;
-  justify-content: flex-start;
-  max-width: 532px;
-  width: 100%;
-  gap: 5px;
-`;
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: #faf7f2;
-  font-weight: 400;
-  font-size: 14.5px;
-  line-height: 28.8px;
-  font-family: "Barlow", sans-serif;
 
-  &:hover {
-    transition: opacity 0.2s;
-    color: #cac8c4;
-  }
-`;
 const MainContent = styled.main`
   max-width: 532px;
   margin: 0 auto;
@@ -164,7 +144,6 @@ export default function OrderPage() {
       });
   }
 
-  const basePrice = 85.5;
   const extraPrice = formData.toppings.length * 5;
   const total = (85.5 + extraPrice) * formData.quantity;
   return (
