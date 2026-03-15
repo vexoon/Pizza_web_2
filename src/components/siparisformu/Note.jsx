@@ -19,11 +19,15 @@ const Label = styled.label`
 const StyledInput = styled.textarea`
   width: 100%;
   max-width: 532px;
-  height: 30px;
+  height: 40px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
+  background-color: #faf7f2;
   font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  color: #5f5f5f;
+  resize: none;
 
   &:focus {
     outline: none;
@@ -33,7 +37,7 @@ const StyledInput = styled.textarea`
 
 const Divider = styled.hr`
   border: 0;
-  border-top: 2px solid #ccc;
+  border-top: 1px solid #bbbbbb;
   margin: 40px 0;
   width: 104%;
 `;

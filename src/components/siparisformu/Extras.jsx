@@ -6,8 +6,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  margin-top: 30px;
-  max-width: 532px;
+  width: 570px;
 `;
 
 const ContainerHeader = styled.div`

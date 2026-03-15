@@ -11,19 +11,18 @@ import Note from "./Note";
 import OrderSummary from "./OrderSummary";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Footer from "./../homepage/Footer";
 
 const ContainerHeader = styled.header`
   background-color: #ce2829;
   width: 100%;
-  height: 15.5%;
+  height: 138px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 66.49px;
+  justify-content: center;
 `;
 const Image = styled.img`
+  margin: 54.41px 0 33.59px 0;
   width: 363px;
-  height: 47px;
 `;
 const Nav = styled.nav`
   margin-top: 44.72px;
@@ -142,12 +141,15 @@ export default function OrderPage() {
     e.preventDefault();
     if (!isValid) return;
 
+    const orderToSave = {
+      ...formData,
+      total: (85.5 + extraPrice) * formData.quantity,
+    };
+
+    localStorage.setItem("pizzaSiparisi", JSON.stringify(orderToSave));
+
     axios
-      .post("https://reqres.in/api/pizza", formData, {
-        headers: {
-          "x-api-key": "reqres-free-v1",
-        },
-      })
+      .post("https://jsonplaceholder.typicode.com/posts", formData)
       .then((response) => {
         console.log("Sipariş Başarıyla Gönderildi!");
         console.log("API Yanıtı (Sipariş Özeti):", response.data);
@@ -155,9 +157,10 @@ export default function OrderPage() {
         setFormData(initialFormData);
       })
       .catch((error) => {
-        console.error("Sipariş gönderilirken bir hata oluştu:", error);
-        history.push("/success");
-        setFormData(initialFormData);
+        console.error(
+          "Hata Detayı:",
+          error.response ? error.response.data : error.message,
+        );
       });
   }
 
@@ -168,21 +171,14 @@ export default function OrderPage() {
     <>
       <ContainerHeader>
         <Image src={logo} />
-        <Nav>
-          <StyledLink to="/">Anasayfa</StyledLink>
-          <span style={{ color: "#FAF7F2" }}>-</span>
-          <StyledLink to="/order" style={{ fontWeight: "bold" }}>
-            Sipariş Oluştur
-          </StyledLink>
-        </Nav>
       </ContainerHeader>
+      <PizzaInfo />
       <MainContent as="form" onSubmit={handleSubmit}>
-        <PizzaInfo />
         <section
           style={{
             display: "flex",
             justifyContent: "flex-start",
-            gap: "167.88px",
+            gap: "56px",
           }}
         >
           <div>
@@ -211,6 +207,7 @@ export default function OrderPage() {
           isValid={isValid}
         />
       </MainContent>
+      <Footer />
     </>
   );
 }

@@ -20,11 +20,12 @@ const Label = styled.label`
 const StyledInput = styled.input`
   width: 100%;
   max-width: 532px;
-  height: 30px;
+  height: 40px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
   font-family: "Barlow", sans-serif;
+  background-color: #faf7f2;
 
   &:focus {
     outline: none;

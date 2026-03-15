@@ -4,7 +4,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  max-width: 532px;
+  gap: 19px;
 `;
 
 const ContainerForm = styled.div`
@@ -17,9 +17,10 @@ const ContainerForm = styled.div`
 const Title = styled.h2`
   color: #292929;
   font-weight: 600;
-  font-size: 19px;
+  font-size: 20px;
   line-height: 24.76px;
   font-family: "Barlow", sans-serif;
+  margin: 0;
 
   &::after {
     content: " *";
@@ -27,15 +28,33 @@ const Title = styled.h2`
   }
 `;
 
-const Label = styled.label`
+const ButtonWrapper = styled.div`
   display: flex;
-  column-gap: 11px;
-  align-items: baseline;
+  gap: 17.2px;
+`;
+
+const Label = styled.label`
+  width: 56px;
+  height: 56px;
+  background-color: ${(props) => (props.isSelected ? "#ffeecc" : "#FAF7F2")};
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   color: #5f5f5f;
   font-weight: 500;
   font-size: 16px;
   line-height: 40px;
   font-family: "Barlow", sans-serif;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #ffeecc;
+  }
+`;
+const StyledInput = styled.input`
+  display: none;
 `;
 
 export default function PizzaSize(props) {
@@ -45,42 +64,44 @@ export default function PizzaSize(props) {
     <Container>
       <Title>Boyut Seç</Title>
       <ContainerForm>
-        <Label htmlFor="S">
-          <input
-            type="radio"
-            id="S"
-            name="size"
-            value="small"
-            checked={size === "small"}
-            onChange={handleChange}
-            required
-          />
-          Küçük
-        </Label>
-        <Label htmlFor="M">
-          <input
-            type="radio"
-            id="M"
-            name="size"
-            value="medium"
-            checked={size === "medium"}
-            onChange={handleChange}
-            required
-          />
-          Orta
-        </Label>
-        <Label htmlFor="L">
-          <input
-            type="radio"
-            id="L"
-            name="size"
-            value="large"
-            checked={size === "large"}
-            onChange={handleChange}
-            required
-          />
-          Büyük
-        </Label>
+        <ButtonWrapper>
+          <Label htmlFor="S" isSelected={size === "small"}>
+            <StyledInput
+              type="radio"
+              id="S"
+              name="size"
+              value="small"
+              checked={size === "small"}
+              onChange={handleChange}
+              required
+            />
+            S
+          </Label>
+          <Label htmlFor="M" isSelected={size === "medium"}>
+            <StyledInput
+              type="radio"
+              id="M"
+              name="size"
+              value="medium"
+              checked={size === "medium"}
+              onChange={handleChange}
+              required
+            />
+            M
+          </Label>
+          <Label htmlFor="L" isSelected={size === "large"}>
+            <StyledInput
+              type="radio"
+              id="L"
+              name="size"
+              value="large"
+              checked={size === "large"}
+              onChange={handleChange}
+              required
+            />
+            L
+          </Label>
+        </ButtonWrapper>
       </ContainerForm>
     </Container>
   );

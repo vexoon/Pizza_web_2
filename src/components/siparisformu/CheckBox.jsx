@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Label = styled.label`
   display: flex;
   column-gap: 11px;
-  align-items: baseline;
+  align-items: center;
   color: #5f5f5f;
   font-weight: 700;
   font-size: 16px;
@@ -12,10 +12,24 @@ const Label = styled.label`
 `;
 
 const ToppingInput = styled.input`
-  width: 15px;
-  height: 15px;
-  accent-color: #fdc913;
-  cursor: pointer;
+  display: none;
+`;
+const StyledBox = styled.div`
+  width: 45px;
+  height: 45px;
+  background-color: ${props => (props.$checked ? "#fdc913" : "#FAF7F2")};
+  border-radius: 6px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  &::after {
+    content: "✔";
+    display: ${props => (props.$checked ? "block" : "none")};
+    color: #000000;
+    font-size: 18px;
+  }
 `;
 
 export default function CheckBox(props) {
@@ -31,6 +45,7 @@ export default function CheckBox(props) {
         checked={checked}
         disabled={disabled}
       />
+      <StyledBox $checked={checked} />
       {topping}
     </Label>
   );

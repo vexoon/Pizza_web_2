@@ -23,9 +23,9 @@ const FooterContent = styled.div`
   max-width: 1066px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr 1.5fr;
   gap: 53px;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 `;
 const InfoSection = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ const InfoItem = styled.div`
   margin-bottom: 22px;
 `;
 const InfoLogo = styled.img`
-  width: 210px;
+  width: 200px;
   height: 100px;
   margin-bottom: 40px;
 `;
@@ -79,6 +79,7 @@ const MenuLi = styled.li`
 const InstaTitle = styled.h4`
   font-size: 24px;
   font-weight: 500;
+  font-family: "Barlow", sans-serif;
   margin-bottom: 40px;
 `;
 const InstaGrid = styled.div`
@@ -128,7 +129,7 @@ export default function Footer() {
           </InfoItem>
         </InfoSection>
 
-        <section>
+        <section style={{ marginTop: "40px" }}>
           <MenuTitle>Hot Menu</MenuTitle>
           <MenuUl>
             <MenuLi>Terminal Pizza</MenuLi>
@@ -140,7 +141,7 @@ export default function Footer() {
           </MenuUl>
         </section>
 
-        <section>
+        <section style={{ margin: "40px 0 0 40px" }}>
           <InstaTitle>Instagram</InstaTitle>
           <InstaGrid>
             <InstaImage src={insta1} />

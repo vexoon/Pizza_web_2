@@ -5,7 +5,7 @@ const Container = styled.div`
   gap: 33px;
   align-items: start;
   max-width: 350px;
-  margin-bottom: 173.37px;
+  margin-bottom: 110px;
 `;
 
 const ButtonContainer = styled.div`
@@ -46,6 +46,7 @@ const SummaryCard = styled.div`
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   max-width: 350px;
+  background-color: #faf7f2;
   max-height: 150px;
   display: flex;
   flex-direction: column;
@@ -96,7 +97,8 @@ const SubmitButton = styled(Button)`
 `;
 
 export default function OrderSummary(props) {
-  const { quantity, handleChange, extraPrice, total, isValid, handleSubmit } = props;
+  const { quantity, handleChange, extraPrice, total, isValid, handleSubmit } =
+    props;
 
   const increase = () => {
     handleChange({
@@ -126,14 +128,16 @@ export default function OrderSummary(props) {
           <Title>Sipariş Toplamı</Title>
           <Selections>
             <Text2>Seçimler</Text2>
-            <Text2>{extraPrice}</Text2>
+            <Text2>{extraPrice}₺</Text2>
           </Selections>
           <Selections>
             <Total>Toplam</Total>
-            <Total>{total}</Total>
+            <Total>{total}₺</Total>
           </Selections>
         </SummaryCard>
-        <SubmitButton type="submit" onClick={handleSubmit} disabled={!isValid}>Sipariş Ver</SubmitButton>
+        <SubmitButton type="submit" onClick={handleSubmit} disabled={!isValid}>
+          Sipariş Ver
+        </SubmitButton>
       </div>
     </Container>
   );

@@ -4,15 +4,16 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  max-width: 532px;
+  gap: 19px;
 `;
 
 const Title = styled.h2`
   color: #292929;
   font-weight: 600;
-  font-size: 19px;
+  font-size: 20px;
   line-height: 24.76px;
   font-family: "Barlow", sans-serif;
+  margin: 0;
 
   &::after {
     content: " *";
@@ -22,13 +23,16 @@ const Title = styled.h2`
 
 const StyledSelect = styled.select`
   width: 100%;
-  max-width: 250px;
-  padding: 2px 7px;
-  border: 1px solid #292929;
-  border-radius: 5px;
-  color: #292929;
+  min-width: 258px;
+  height: 56px;
+  padding: 0px 22px;
+  border: none;
+  border-radius: 6px;
+  background-color: #faf7f2;
+  color: #5f5f5f;
   font-family: "Barlow", sans-serif;
   font-size: 16px;
+  outline: none;
 `;
 
 export default function DoughType(props) {
@@ -39,11 +43,11 @@ export default function DoughType(props) {
       <Title>Hamur Seç</Title>
       <StyledSelect name="dough" value={dough} onChange={handleChange} required>
         <option value="" disabled>
-          Hamur Kalınlığı
+          --Hamur Kalınlığı--
         </option>
         <option value="ince">İnce</option>
         <option value="normal">Normal</option>
-        <option value="kalin">Kalın</option>
+        <option value="kalın">Kalın</option>
       </StyledSelect>
     </Container>
   );
