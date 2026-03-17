@@ -44,6 +44,7 @@ export default function NameInput(props) {
         name="name"
         value={name}
         onChange={handleChange}
+        data-cy="name-input"
         required
       />
     </ContainerForm>

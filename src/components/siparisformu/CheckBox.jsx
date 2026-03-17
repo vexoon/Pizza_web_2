@@ -44,6 +44,7 @@ export default function CheckBox(props) {
         onChange={handleChange}
         checked={checked}
         disabled={disabled}
+        data-cy={props['data-cy']}
       />
       <StyledBox $checked={checked} />
       {topping}

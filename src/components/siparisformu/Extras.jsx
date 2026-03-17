@@ -66,6 +66,7 @@ export default function Extras(props) {
             checked={selectedToppings.includes(topping)}
             handleChange={handleChange}
             topping={topping}
+            data-cy="topping-input"
             disabled={
               selectedToppings.length >= 10 &&
               !selectedToppings.includes(topping)

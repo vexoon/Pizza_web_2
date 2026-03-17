@@ -41,13 +41,13 @@ export default function DoughType(props) {
   return (
     <Container>
       <Title>Hamur Seç</Title>
-      <StyledSelect name="dough" value={dough} onChange={handleChange} required>
+      <StyledSelect data-cy="dough-select" name="dough" value={dough} onChange={handleChange} required>
         <option value="" disabled>
           --Hamur Kalınlığı--
         </option>
-        <option value="ince">İnce</option>
-        <option value="normal">Normal</option>
-        <option value="kalın">Kalın</option>
+        <option data-cy="dough-option" value="ince">İnce</option>
+        <option data-cy="dough-option" value="normal">Normal</option>
+        <option data-cy="dough-option" value="kalın">Kalın</option>
       </StyledSelect>
     </Container>
   );

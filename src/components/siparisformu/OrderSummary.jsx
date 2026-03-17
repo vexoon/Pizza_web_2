@@ -119,7 +119,7 @@ export default function OrderSummary(props) {
           -
         </Button>
         <Text>{quantity}</Text>
-        <Button type="button" onClick={increase}>
+        <Button data-cy="increase-button" type="button" onClick={increase}>
           +
         </Button>
       </ButtonContainer>
@@ -135,7 +135,7 @@ export default function OrderSummary(props) {
             <Total>{total}₺</Total>
           </Selections>
         </SummaryCard>
-        <SubmitButton type="submit" onClick={handleSubmit} disabled={!isValid}>
+        <SubmitButton data-cy="submit-button" type="submit" onClick={handleSubmit} disabled={!isValid}>
           Sipariş Ver
         </SubmitButton>
       </div>

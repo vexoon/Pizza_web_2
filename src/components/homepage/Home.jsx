@@ -82,7 +82,7 @@ export default function Home() {
           <MainHeading>
             KOD ACIKTIRIR <br /> PİZZA, DOYURUR
           </MainHeading>
-          <ActionButton onClick={() => history.push("/order")}>
+          <ActionButton data-cy="order-button" onClick={() => history.push("/order")}>
             ACIKTIM
           </ActionButton>
         </Content>

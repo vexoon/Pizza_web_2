@@ -85,6 +85,7 @@ export default function PizzaSize(props) {
               value="medium"
               checked={size === "medium"}
               onChange={handleChange}
+              data-cy="Medium-size-input"
               required
             />
             M

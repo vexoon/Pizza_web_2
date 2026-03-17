@@ -101,7 +101,7 @@ export default function PizzaInfo() {
             Sipariş Oluştur
           </StyledLink>
         </Nav>
-        <Title>Position Absolute Acı Pizza</Title>
+        <Title data-cy="pizza-info">Position Absolute Acı Pizza</Title>
         <Info>
           85.50₺
           <Rating>
